@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: Hunt Service
+    
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/scavengerhunt
+      database: scavengerhunt
+      collection: hunts
+ 
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+        health:
+            show-details: always 
+
+hunt:
+  cache:
+    name: hunts
+    maxSize: 10
+    expiryHours: 1
+   
+eventbus:
+  aws:
+    region: us-east-1
+    sns:
+      huntTopicArn: arn:aws:sns:us-east-1:489172774606:AFTERHOURS_HUNT_TOPIC
+    sqs:
+      huntQueueUrl: https://sqs.us-east-1.amazonaws.com/489172774606/AFTERHOURS_HUNT_QUEUE
+      receiveMaxMessages: 5
+      pollWaitTime: 20
+
+server:
+  websocket:
+    timeout: 3600000  # 1 hour in ms
