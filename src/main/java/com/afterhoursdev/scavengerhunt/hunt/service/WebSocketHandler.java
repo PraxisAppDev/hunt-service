@@ -94,7 +94,9 @@ public class WebSocketHandler extends AbstractWebSocketHandler {
     	// Get the Hunt associated with the Hunt message
        	Multimap<String, WebSocketSession> hunt = managedHunts.get(huntMessage.getHuntId()); 
        	
+       	
        	if (hunt != null) {
+       		System.out.println("Sending web socket message.");
             // Get the web socket connections for all players associated with the team   
   	        Collection<WebSocketSession> webSocketSessions = hunt.get(huntMessage.getTeamId());    
   	      
@@ -108,7 +110,8 @@ public class WebSocketHandler extends AbstractWebSocketHandler {
 				   e.printStackTrace();
 			   } 
             }
-        }
+        } else
+        	System.out.println("Did not find Hunt. Cannot send web socket message.");
     }
     
     private HashMap<String, String> parseQueryParameters(URI uri) {

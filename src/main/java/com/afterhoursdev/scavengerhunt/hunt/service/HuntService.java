@@ -290,7 +290,7 @@ public class HuntService {
                 .version(StartChallengeMessage.START_CHALLENGE_MESSAGE_VERSION)
                 .messageType(StartChallengeMessage.START_CHALLENGE_MESSAGE)
                 .huntId(huntId)
-                .teamName(teamId)
+                .teamId(teamId)
                 .challengeId(challengeId)
                 .build();
         webSocketHandler.sendWebSocketMessage(startChallengeMessage);
