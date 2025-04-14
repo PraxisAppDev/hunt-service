@@ -26,7 +26,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build project with Maven
-      run: mvn -B install --file pom.xml
+      run: mvn clean package --no-transfer-progress
         
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
