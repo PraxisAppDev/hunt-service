@@ -27,6 +27,8 @@ jobs:
 
     - name: Build project with Maven
       run: mvn clean package --no-transfer-progress
+
+    - name: Debug: List contents of target
       run: ls -la target
         
     - name: Login to GitHub Container Registry
