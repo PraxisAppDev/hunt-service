@@ -27,6 +27,7 @@ jobs:
 
     - name: Build project with Maven
       run: mvn clean package --no-transfer-progress
+      run: ls -la target
         
     - name: Login to GitHub Container Registry
       uses: docker/login-action@v3
