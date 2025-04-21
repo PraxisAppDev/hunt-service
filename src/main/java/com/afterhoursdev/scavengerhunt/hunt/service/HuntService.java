@@ -58,7 +58,6 @@ import com.afterhoursdev.scavengerhunt.hunt.websocket.messages.TeamUpdatedMessag
 
 @Service
 public class HuntService {
-    //private static final Gson gson = new Gson();
     //private static final Logger logger = LoggerFactory.getLogger(HuntService.class);
 	 
     private HashMap<String, Challenge> challengeSolutions = new HashMap<>();
@@ -154,10 +153,7 @@ public class HuntService {
    	        ArrayList<Player> players = new ArrayList<>();
    	        Player player = new Player();
    	        player.setName(createTeamRequest.getPlayerName());
-   	        
-   	        System.out.println("Team Leader: " + createTeamRequest.isHuntAlone());
-   	        
-   	        player.setTeamLeader(createTeamRequest.isHuntAlone());
+   	        player.setTeamLeader(true);
    	        players.add(player);
    	        newTeam.setPlayers(players);
    	      	 	
